@@ -1,219 +1,180 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입 | 판다마켓</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        :root {
-            --primary-blue: #3692FF;
-            --gray100: #F3F4F6;
-            --gray50: #F9FAFB;
-            --font-size-base: 16px;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://panda-market-sample.netlify.app/signup"
+    />
+    <meta property="og:title" content="판다마켓 - 회원가입" />
+    <meta property="og:image" content="images/logo/og-image.png" />
+    <meta
+      property="og:description"
+      content="일상의 모든 물건을 거래해 보세요"
+    />
+    <title>판다마켓 - 회원가입</title>
+    <link rel="icon" href="images/logo/favicon.ico" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/auth.css" />
+  </head>
 
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-        }
+  <body>
+    <main class="auth-container">
+      <a href="index.html" class="logo-home-link" aria-label="홈으로 이동"
+        ><img src="images/logo/logo.svg" alt="판다마켓 로고"
+      /></a>
 
-        .signup-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .logo {
-            width: 80px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-
-        .input-container {
-            width: 90%;
-            max-width: 350px;
-            text-align: left;
-            margin-bottom: 15px;
-        }
-
-        .input-container label {
-            display: block;
-            font-size: 1.1em;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .rounded-input, .password-container input {
-            background-color: var(--gray100);
-            border-radius: 10px;
-            border: 1px solid #ccc;
-            padding: 12px;
-            width: 100%;
-            font-size: var(--font-size-base);
-            box-sizing: border-box;
-        }
-
-        .password-container {
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-
-        .toggle-password {
-            position: absolute;
-            right: 10px;
-            cursor: pointer;
-            width: 24px;
-            height: 24px;
-        }
-
-        .signup-btn {
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 350px;
-            font-size: 1.2em;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        .social-login {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 15px;
-            background-color: #E3F2FD;
-            padding: 10px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 350px;
-        }
-
-        .social-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .social-icon img {
-            width: 70%;
-            height: auto;
-        }
-
-        .login-link {
-            font-size: 0.9em;
-            margin-top: 10px;
-        }
-
-        /* Responsive Design */
-        @media (min-width: 600px) {
-            .logo {
-                width: 100px;
-            }
-            .rounded-input, .password-container input, .signup-btn {
-                font-size: 1.2em;
-                padding: 14px;
-            }
-            .social-login {
-                font-size: 1em;
-                padding: 12px;
-            }
-        }
-
-        @media (min-width: 900px) {
-            .logo {
-                width: 120px;
-            }
-            .rounded-input, .password-container input, .signup-btn {
-                font-size: 1.4em;
-                padding: 16px;
-            }
-            .social-login {
-                font-size: 1.1em;
-                padding: 14px;
-            }
-            .login-link {
-                font-size: 1em;
-            }
-        }
-
-    </style>
-</head>
-<body>
-    <div class="signup-container">
-        <img src="assets/Property 1=sm.png" alt="판다마켓 로고" class="logo">
-
-        <form class="signup-form">
-            <div class="input-container">
-                <label for="email">이메일</label>
-                <input type="email" id="email" placeholder="codeit@email.com" required class="rounded-input">
-            </div>
-
-            <div class="input-container">
-                <label for="nickname">닉네임</label>
-                <input type="text" id="nickname" placeholder="판다" required class="rounded-input">
-            </div>
-
-            <div class="input-container">
-                <label for="password">비밀번호</label>
-                <div class="password-container">
-                    <input type="password" id="password" placeholder="••••••••" required class="rounded-input">
-                    <img src="assets/Property 1=Default.png" alt="비밀번호 보기" class="toggle-password">
-                </div>
-            </div>
-
-            <div class="input-container">
-                <label for="confirm-password">비밀번호 확인</label>
-                <div class="password-container">
-                    <input type="password" id="confirm-password" placeholder="••••••••" required class="rounded-input">
-                    <img src="assets/Property 1=Default.png" alt="비밀번호 보기" class="toggle-password">
-                </div>
-            </div>
-
-            <button type="submit" class="signup-btn">회원가입</button>
-        </form>
-
-        <div class="social-login">
-            <p>간편 로그인하기</p>
-            <a href="https://accounts.google.com" class="social-icon">
-                <img src="assets/ic_google.jpg" alt="Google 로그인">
-            </a>
-            <a href="https://www.kakaocorp.com/page" class="social-icon">
-                <img src="assets/KakaoTalk_logo.svg" alt="Kakao 로그인">
-            </a>
+      <!-- 로그인 form과 동일한 스크립트 코드를 사용하고 있기 때문에, 구분을 위해 ID 추가 -->
+      <form id="signupForm" method="post">
+        <div class="input-item">
+          <label for="email">이메일</label>
+          <!-- form 관련 태그에 `required` 속성을 사용하면 해당 필드를 필수 입력 항목으로 지정해 폼 제출 전 클라이언트 측에서 간단한 유효성 검사를 할 수 있어요. -->
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="이메일을 입력해 주세요"
+            required
+          />
+          <!-- 
+            오류 메세지 처리
+            - 사용자 입력값이 유효성 검사 기준을 충족하지 않을 때 표시될 메시지
+            - <span> 태그와 고유 ID를 사용하여 각 오류 메시지를 특정하고, 자바스크립트를 통해 메세지의 표시 여부를 제어
+            - 'error-message' class로 오류 메시지의 스타일을 지정
+          -->
+          <span id="emailEmptyError" class="error-message"
+            >이메일을 입력해 주세요</span
+          >
+          <span id="emailInvalidError" class="error-message"
+            >잘못된 이메일 형식입니다</span
+          >
         </div>
 
-        <p class="login-link">이미 회원이신가요? <a href="login.html">로그인</a></p>
-    </div>
+        <div class="input-item">
+          <label for="nickname">닉네임</label>
+          <input
+            id="nickname"
+            name="nickname"
+            type="text"
+            placeholder="닉네임을 입력해 주세요"
+            required
+          />
+          <span id="nicknameEmptyError" class="error-message"
+            >닉네임을 입력해 주세요</span
+          >
+        </div>
 
-    <script>
-        document.querySelectorAll(".toggle-password").forEach(item => {
-            item.addEventListener("click", function() {
-                let passwordField = this.previousElementSibling;
-                if (passwordField.type === "password") {
-                    passwordField.type = "text";
-                    this.src = "assets/Property 1=Variant2.png"; // Show eye-open icon
-                } else {
-                    passwordField.type = "password";
-                    this.src = "assets/Property 1=Default.png"; // Show eye-closed icon
-                }
-            });
-        });
-    </script>
-</body>
+        <div class="input-item">
+          <label for="password">비밀번호</label>
+          <div class="input-wrapper">
+            <input
+              id="password"
+              name="password"
+              type="password"
+              placeholder="비밀번호를 입력해 주세요"
+              required
+            />
+            <button
+              type="button"
+              class="password-toggle-button"
+              aria-label="비밀번호 보기"
+            >
+              <img
+                class="password-toggle-icon"
+                src="images/icons/eye-invisible.svg"
+                alt="비밀번호 숨김 상태 아이콘"
+              />
+            </button>
+          </div>
+          <span id="passwordEmptyError" class="error-message"
+            >비밀번호를 입력해 주세요</span
+          >
+          <span id="passwordInvalidError" class="error-message"
+            >비밀번호를 8자 이상 입력해 주세요</span
+          >
+        </div>
+
+        <div class="input-item">
+          <label for="passwordConfirmation">비밀번호 확인</label>
+          <div class="input-wrapper">
+            <input
+              id="passwordConfirmation"
+              name="passwordConfirmation"
+              type="password"
+              placeholder="비밀번호를 다시 한 번 입력해 주세요"
+              required
+            />
+            <button
+              type="button"
+              class="password-toggle-button"
+              aria-label="비밀번호 보기"
+            >
+              <img
+                class="password-toggle-icon"
+                src="images/icons/eye-invisible.svg"
+                alt="비밀번호 숨김 상태 아이콘"
+              />
+            </button>
+          </div>
+          <span id="passwordConfirmationInitError" class="error-message"
+            >먼저 조건에 맞는 비밀번호를 입력해 주세요</span
+          >
+          <span id="passwordConfirmationError" class="error-message"
+            >비밀번호가 일치하지 않습니다</span
+          >
+        </div>
+
+        <!-- <button> 태그에 직접 disabled 속성을 넣어 기본적으로 비활성화 상태를 만들어줄 수도 되지만, 우리는 자바스크립트 코드 내에서 submit button 요소를 선택한 뒤 속성을 제어할 거예요. -->
+        <button type="submit" class="button pill-button full-width">
+          회원가입
+        </button>
+      </form>
+
+      <div class="social-login-container">
+        <h3>간편 로그인하기</h3>
+        <div class="social-login-links-container">
+          <a
+            href="https://www.google.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="구글 로그인"
+            ><img
+              src="images/social/google-logo.png"
+              alt="구글 로그인"
+              width="42"
+          /></a>
+          <a
+            href="https://www.kakaocorp.com/page/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="카카오톡 로그인"
+            ><img
+              src="images/social/kakao-logo.png"
+              alt="카카오톡 로그인"
+              width="42"
+          /></a>
+        </div>
+      </div>
+
+      <div class="auth-switch">
+        이미 회원이신가요? <a href="login.html">로그인</a>
+      </div>
+    </main>
+
+    <!-- 
+      자바스크립트 파일 불러오기 
+      - 문서의 끝부분에 스크립트 태그를 넣는 것은 문서 로딩 시간을 최적화하는 방법 중 하나예요. 
+      - HTML과 CSS가 먼저 로드되어 사용자에게 빠르게 컨텐츠를 표시할 수 있고, 사용자가 인터랙션을 시작하기 전에 자바스크립트가 로드될 시간을 벌 수 있어요.
+    -->
+    <script src="scripts/auth.js"></script>
+  </body>
 </html>
+
